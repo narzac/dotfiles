@@ -1,0 +1,6 @@
+#!/bin/bash
+export CLICOLOR=1
+export GREP_COLOR="1;33"
+export LESS="-QR" # Tell less not to beep and also display colours
+export HISTCONTROL=ignoredups
+export PATH=$PATH:/Users/narzac/bin/

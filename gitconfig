@@ -1,0 +1,15 @@
+[user]
+	name = Ahmet Yeşil
+	email = narzac@gmail.com
+[color]
+	ui = true
+	pager = yes
+[core]
+	editor = /usr/bin/vim
+	pager = less -FRSX
+[alias]
+	co = checkout
+	st = status --short --branch
+	logl = log --oneline --decorate
+[apply]
+	whitespace = nowarn

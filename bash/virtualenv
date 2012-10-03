@@ -1,0 +1,9 @@
+#!/bin/bash
+mkvirtenv() {
+  [ "$#" -eq 1 ] && mkdir -p ~/.virtualenvs/$1 && virtualenv ~/.virtualenvs/$1
+}
+
+virtenv() {
+  [ "$#" -eq 1 ] && source ~/.virtualenvs/$1/bin/activate
+}
+

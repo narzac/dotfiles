@@ -1,0 +1,43 @@
+#!/bin/bash
+alias c="clear"
+alias rm='rm -i'
+alias mv='mv -i'
+alias grep='grep --color=auto'
+alias ..="cd .."        #go to parent dir
+alias ...="cd ../.."    #go to grandparent dir
+alias cdd="cd -"        #go to previous dir
+alias l.='ls -d .*'     #list hidden files
+alias ll='ls -lhrt'     #extra info compared to "l"
+alias lld='ls -lUd */'  #list directories
+alias lla='ls -a'
+alias sude='sudo -e'
+alias psg='ps aux |grep -i'
+alias h="history"
+alias enw="emacs -nw"
+alias v="vim"
+alias reload=". ~/.bashrc"
+alias ea="nano Users/$MYUSER/Code/dotfiles/bash/aliases && reload"
+alias eb="nano Users/$MYUSER/Code/dotfiles/bashrc && reload"
+alias ec="nano Users/$MYUSER/Code/dotfiles/bash/config && reload"
+alias ee="nano Users/$MYUSER/Code/dotfiles/bash/env && reload"
+alias ef="nano Users/$MYUSER/Code/dotfiles/bash/functions && reload"
+
+# Directory bookmarks
+alias m1='alias g1="cd `pwd`"'
+alias m2='alias g2="cd `pwd`"'
+alias m3='alias g3="cd `pwd`"'
+alias m4='alias g4="cd `pwd`"'
+alias m5='alias g5="cd `pwd`"'
+alias m6='alias g6="cd `pwd`"'
+alias m7='alias g7="cd `pwd`"'
+alias m8='alias g8="cd `pwd`"'
+alias m9='alias g9="cd `pwd`"'
+alias mdump='alias|grep -e "alias g[0-9]"|grep -v "alias m" > ~/.bookmarks'
+alias lma='alias | grep -e "alias g[0-9]"|grep -v "alias m"|sed "s/alias //"'
+touch ~/.bookmarks
+source ~/.bookmarks
+
+# Git aliases
+alias gd='git diff'
+alias ga='git add'
+alias gst='git status -sb'
