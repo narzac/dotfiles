@@ -1,6 +1,7 @@
 #!/bin/bash
 MYUSER="narzac"
-BASEDIR="/Users/"$MYUSER"/code/dotfiles"
+MYHOME="/Users"
+export BASEDIR="$MYHOME"/"$MYUSER"/Code/dotfiles
 
 function is_superuser() {
     if [[  "$(whoami)" == "root"  ]]; then

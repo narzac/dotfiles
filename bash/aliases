@@ -1,4 +1,5 @@
 #!/bin/bash
+
 alias c="clear"
 alias rm='rm -i'
 alias mv='mv -i'
@@ -16,11 +17,11 @@ alias h="history"
 alias enw="emacs -nw"
 alias v="vim"
 alias reload=". ~/.bashrc"
-alias ea="nano Users/$MYUSER/Code/dotfiles/bash/aliases && reload"
-alias eb="nano Users/$MYUSER/Code/dotfiles/bashrc && reload"
-alias ec="nano Users/$MYUSER/Code/dotfiles/bash/config && reload"
-alias ee="nano Users/$MYUSER/Code/dotfiles/bash/env && reload"
-alias ef="nano Users/$MYUSER/Code/dotfiles/bash/functions && reload"
+alias ea='nano  "$BASEDIR"/bash/aliases && reload'
+alias eb='nano  "$BASEDIR"/bashrc && reload'
+alias ec='nano  "$BASEDIR"/bash/config && reload'
+alias ee='nano  "$BASEDIR"/bash/env && reload'
+alias ef='nano  "$BASEDIR"/bash/functions && reload'
 
 # Directory bookmarks
 alias m1='alias g1="cd `pwd`"'
