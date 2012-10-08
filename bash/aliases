@@ -42,3 +42,4 @@ source ~/.bookmarks
 alias gd='git diff'
 alias ga='git add'
 alias gst='git status -sb'
+alias gcm='git commit -m '
