@@ -4,3 +4,14 @@
 local_*
 .netrwhist
 .DS_Store
+.*
+backups/
+el-get/
+ac-comphist.dat
+auto-save-list/
+.ido.last
+.smex-items
+elpa/
+url/
+srecode-map.el
+*.elc
