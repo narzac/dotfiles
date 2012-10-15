@@ -1,4 +1,6 @@
+(add-to-list 'load-path "~/.emacs.d/el-get/yasnippet/")
 (add-to-list 'load-path "~/.emacs.d/el-get/auto-complete-yasnippet/")
+(require 'yasnippet)
 (require 'auto-complete-config)
 (require 'auto-complete-yasnippet)
 
