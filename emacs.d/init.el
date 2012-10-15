@@ -142,6 +142,7 @@
 				 auto-complete-yasnippet
 				 auto-complete
 				 zencoding-mode
+				 auto-complete-css
 ;				 auto-complete-auctex
 ;				 ac-math
 				 )
