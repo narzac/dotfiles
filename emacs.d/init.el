@@ -144,7 +144,6 @@
 				 zencoding-mode
 ;				 auto-complete-auctex
 ;				 ac-math
-				 cedet
 				 )
 		 (mapcar 'el-get-source-name el-get-sources)))
 
