@@ -15,3 +15,4 @@ elpa/
 url/
 srecode-map.el
 *.elc
+eshell/
