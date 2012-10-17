@@ -4,6 +4,7 @@
 (require 'auto-complete-config)
 (require 'auto-complete-yasnippet)
 
+
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/auto-complete/dict/")
 (ac-config-default)
 (define-key ac-mode-map (kbd "TAB") 'auto-complete)

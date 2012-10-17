@@ -3,6 +3,7 @@
 (setq visible-bell t)
 (setq debug-on-error t)
 
+
 (setq exec-path (cons "/usr/local/bin" exec-path))
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 (setq exec-path (cons "/usr/texbin" exec-path))
@@ -13,7 +14,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; on to the visual settings
-(setq inhibit-splash-screen t)			 ; no splash screen
+(setq inhibit-splash-screen t)           ; no splash screen
 (setq initial-scratch-message nil)     ; no scratch message
 (setq inhibit-startup-message t)       ; no startup message
 
@@ -120,7 +121,16 @@
 	(:name auto-complete-auctex
 			 :type git
 			 :url "https://github.com/monsanto/auto-complete-auctex.git"
-			 :compile ("auto-complete-auctex.el"))))
+			 :compile ("auto-complete-auctex.el"))
+;	(:name emacs-clang-complete-async
+;          :type git
+;          :url "https://github.com/Golevka/emacs-clang-complete-async.git"
+;          :build `("make")
+;          :website "https://github.com/Golevka/emacs-clang-complete-async"
+;          :description "Auto complete for C/C++ using clang."
+;          :load-path (".")
+;          :load ("auto-complete-clang-async.el"))))
+))
 
 
 ;; list all packages you want installed
@@ -143,8 +153,8 @@
 				 auto-complete
 				 zencoding-mode
 				 auto-complete-css
-;				 auto-complete-auctex
-;				 ac-math
+				 auto-complete-clang
+;                ac-math
 				 )
 		 (mapcar 'el-get-source-name el-get-sources)))
 
@@ -183,3 +193,8 @@
 			"reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "
 			"pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "
 			"culpa qui officia deserunt mollit anim id est laborum."))
+
+
+(load-file "~/.emacs.d/custom.el")
+;; It's all about the project.
+(global-set-key (kbd "C-c f") 'find-file-in-project)
