@@ -3,6 +3,12 @@
 (setq visible-bell t)
 (setq debug-on-error t)
 
+;; Turns on syntax highlighting.
+(global-font-lock-mode t)
+;; Sets the syntax highlighting to the maximum amount of colorization.
+(setq font-lock-maximum-decoration t)
+;; Do not make backup recovery files when editing.
+(setq make-backup-files nil)
 
 (setq exec-path (cons "/usr/local/bin" exec-path))
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
@@ -197,4 +203,4 @@
 
 (load-file "~/.emacs.d/custom.el")
 ;; It's all about the project.
-(global-set-key (kbd "C-c f") 'find-file-in-project)
+(global-set-key (kbd "C-x f") 'find-file-in-project)
