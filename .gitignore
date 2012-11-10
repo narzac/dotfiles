@@ -16,3 +16,6 @@ url/
 srecode-map.el
 *.elc
 eshell/
+tmp/
+url/
+
