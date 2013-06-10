@@ -1,1 +1,14 @@
 set completion-ignore-case On
+
+## Python interpreter configs
+# I prefer emacs-style editing:
+set editing-mode emacs
+
+# Edit using a single line:
+set horizontal-scroll-mode On
+
+# Rebind some keys:
+"\C-x\C-r": re-read-init-file
+
+# Use tab for name complete
+Tab: complete
