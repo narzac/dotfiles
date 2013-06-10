@@ -32,3 +32,5 @@ else
 	PS1=$PS1_LOCAL_USER
     fi
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
