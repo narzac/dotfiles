@@ -18,7 +18,9 @@
 	      ;;;;;;;;;;;;;;;;; PACKAGE.EL INSTALL   - START  ;;;;;;;;;;;;;;;;;
 
 ; list the packages you want
-(setq package-list '(smex css-mode rainbow-mode flymake-cursor color-theme auctex zencoding-mode buffer-move))
+(setq package-list '(smex css-mode rainbow-mode flymake-cursor color-theme
+			  auctex zencoding-mode buffer-move
+			  go-mode flymake-go sml-mode less-css-mode markdown-mode))
 
 ; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
@@ -103,7 +105,7 @@
 				  perl-mode cperl-mode python-mode ruby-mode
 				  ecmascript-mode javascript-mode php-mode css-mode
 				  makefile-mode sh-mode fortran-mode f90-mode ada-mode
-				  xml-mode sgml-mode
+				  xml-mode sgml-mode go-mode
 				  emms-tag-editor-mode
 				  asm-mode
 				  org-mode jade-mode stylus-mode sws-mode))
@@ -150,8 +152,12 @@
 /usr/include
 /System/Library/Frameworks
 /Library/Frameworks
+/usr/clang-ide/lib/c++/v1
 "
 			   )))
+
+;; c++11 for autocomplete-clang
+(setq ac-clang-flags (append '( "-std=c++11" "-stdlib=libc++" ) ac-clang-flags))
 
 (defun my-ac-cc-mode-setup ()
   (setq ac-sources (append '(ac-source-clang) ac-sources)))
@@ -216,7 +222,7 @@
      (lambda () (flymake-mode t)))
 
 ;; Turns on flymake for all files which have a flymake mode
-(add-hook 'find-file-hook 'flymake-find-file-hook)
+;(add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; Zencoding mode
 
@@ -232,4 +238,11 @@
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'js2-mode 'rainbow-mode)
 (add-hook 'sgml-mode-hook 'rainbow-mode)
+
+
+;; auto start tmpl
+(add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
 	      ;;;;;;;;;;;;;;;;; PACKAGE CONFIGURE - END   ;;;;;;;;;;;;;;;;;;;;;
+
+(setq line-spacing 5)
+(put 'downcase-region 'disabled nil)

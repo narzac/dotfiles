@@ -20,7 +20,7 @@
    (c-toggle-auto-state)))
 
 ; auto syntax check
-(require 'flymake-clang-c)
-(add-hook 'c-mode-hook 'flymake-clang-c-load)
-(require 'flymake-clang-c++)
-(add-hook 'c++-mode-hook 'flymake-clang-c++-load)
+;; (require 'flymake-clang-c)
+;; (add-hook 'c-mode-hook 'flymake-clang-c-load)
+;; (require 'flymake-clang-c++)
+;; (add-hook 'c++-mode-hook 'flymake-clang-c++-load)
