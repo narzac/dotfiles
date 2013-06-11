@@ -80,12 +80,10 @@
 (setq yas/prompt-functions '(yas/dropdown-prompt
 			     yas/completing-prompt
 			     yas/ido-prompt))
-
 ;; ;;auto-complete
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-popup")
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/narzac/ac-dict")
 (setq ac-comphist-file  "~/.emacs.d/tmp/ac-comphist.dat")
 (ac-config-default)
 (global-auto-complete-mode t)
