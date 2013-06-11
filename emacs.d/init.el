@@ -18,7 +18,7 @@
 	      ;;;;;;;;;;;;;;;;; PACKAGE.EL INSTALL   - START  ;;;;;;;;;;;;;;;;;
 
 ; list the packages you want
-(setq package-list '(smex css-mode rainbow-mode flymake-cursor color-theme
+(setq package-list '(smex css-mode rainbow-mode flymake-cursor
 			  auctex  buffer-move
 			  go-mode flymake-go sml-mode less-css-mode markdown-mode))
 
