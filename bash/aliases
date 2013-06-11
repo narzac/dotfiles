@@ -1,5 +1,8 @@
 #!/bin/bash
 
+alias e="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
+alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
+
 alias c="clear"
 alias rm='rm -i'
 alias mv='mv -i'
@@ -17,11 +20,11 @@ alias updatedb='/usr/libexec/locate.updatedb' #MACOSX specific
 alias h="history"
 alias v="vim"
 alias reload=". ~/.bashrc"
-alias ea='nano  "$BASEDIR"/bash/aliases && reload'
-alias eb='nano  "$BASEDIR"/bashrc && reload'
-alias ec='nano  "$BASEDIR"/bash/config && reload'
-alias ee='nano  "$BASEDIR"/bash/env && reload'
-alias ef='nano  "$BASEDIR"/bash/functions && reload'
+alias ea='e  "$BASEDIR"/bash/aliases && reload'
+alias eb='e  "$BASEDIR"/bashrc && reload'
+alias ec='e  "$BASEDIR"/bash/config && reload'
+alias ee='e  "$BASEDIR"/bash/env && reload'
+alias ef='e  "$BASEDIR"/bash/functions && reload'
 
 # Directory bookmarks
 alias m1='alias g1="cd `pwd`"'
