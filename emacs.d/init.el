@@ -19,8 +19,8 @@
 
 ; list the packages you want
 (setq package-list '(smex css-mode rainbow-mode flymake-cursor
-			  auctex  buffer-move
-			  go-mode flymake-go sml-mode less-css-mode markdown-mode))
+			  buffer-move
+			  go-mode flymake-go  less-css-mode markdown-mode))
 
 ; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
@@ -97,35 +97,35 @@
 (setq ac-auto-start nil)
 (setq ac-quick-help-delay 0.5)
 
-;; ;; The modes that AC will start automatically.
-;; (setq ac-modes
-;;		'(emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode
-;;				  html-mode js-mode js2-mode
-;;				  c-mode cc-mode c++-mode java-mode
-;;				  perl-mode cperl-mode python-mode ruby-mode
-;;				  ecmascript-mode javascript-mode php-mode css-mode
-;;				  makefile-mode sh-mode fortran-mode f90-mode ada-mode
-;;				  xml-mode sgml-mode go-mode
-;;				  emms-tag-editor-mode
-;;				  asm-mode
-;;				  org-mode jade-mode stylus-mode sws-mode))
+;; The modes that AC will start automatically.
+(setq ac-modes
+		'(emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode
+				  html-mode js-mode js2-mode
+				  c-mode cc-mode c++-mode java-mode
+				  perl-mode cperl-mode python-mode ruby-mode
+				  ecmascript-mode javascript-mode php-mode css-mode
+				  makefile-mode sh-mode fortran-mode f90-mode ada-mode
+				  xml-mode sgml-mode go-mode
+				  emms-tag-editor-mode
+				  asm-mode
+				  org-mode jade-mode stylus-mode sws-mode))
 
-;; ;; The sources for common all mode.
-;; (custom-set-variables
-;;  '(ac-sources
-;;	 '(
-;;	   ac-source-abbrev
-;;	   ac-source-css-property
-;;	   ac-source-dictionary
-;;	   ac-source-features
-;;	   ac-source-filename
-;; ;          ac-source-files-in-current-dir ;; eshell
-;;	   ac-source-words-in-buffer
-;; ;          ac-source-words-in-same-mode-buffers
-;;	   )))
+;; The sources for common all mode.
+(custom-set-variables
+ '(ac-sources
+	 '(
+	   ac-source-abbrev
+	   ac-source-css-property
+	   ac-source-dictionary
+	   ac-source-features
+	   ac-source-filename
+;          ac-source-files-in-current-dir ;; eshell
+	   ac-source-words-in-buffer
+;          ac-source-words-in-same-mode-buffers
+	   )))
 
-;; ;; auto-complete hooks for emcas-lisp
-;; (add-hook 'emacs-lisp-mode (lambda () (add-to-list 'ac-sources '(ac-source-functions ac-source-symbols ac-source-variables ))))
+;; auto-complete hooks for emacs-lisp
+(add-hook 'emacs-lisp-mode (lambda () (add-to-list 'ac-sources '(ac-source-functions ac-source-symbols ac-source-variables ))))
 
 ;; ;; auto-complete-yasnippet integration
 ;; (require 'auto-complete-yasnippet)
@@ -134,36 +134,6 @@
 ;; ;;auto-complete-auctex integration
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-auctex")
 ;; (require 'auto-complete-auctex)
-
-;; ;auto-complete-clang integration
-;; (require 'auto-complete-clang)
-;; (setq ac-clang-flags
-;;	  (mapcar (lambda (item)(concat "-I" item))
-;;			  (split-string
-;;			   "
-;; .
-;; ./inc
-;; ./include
-;; /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include
-;; /usr/include/c++/4.2.1
-;; /usr/include/c++/4.2.1/backward
-;; /usr/local/include
-;; /Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include
-;; /usr/include
-;; /System/Library/Frameworks
-;; /Library/Frameworks
-;; /usr/clang-ide/lib/c++/v1
-;; "
-;;			   )))
-
-;; ;; c++11 for autocomplete-clang
-;; (setq ac-clang-flags (append '( "-std=c++11" "-stdlib=libc++" ) ac-clang-flags))
-
-;; (defun my-ac-cc-mode-setup ()
-;;   (setq ac-sources (append '(ac-source-clang) ac-sources)))
-
-;; (setq clang-completion-suppress-error 't)
-;; (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
 
 ;; js2-mode
 (add-to-list 'load-path "~/.emacs.d/vendor/js2-mode")
@@ -186,34 +156,28 @@
 ;(setq flymake-log-level 3)
 (require 'flymake-cursor)
 
-(require 'tex-site)
+;;  (require 'tex-site)
 
-(setq font-latex-fontify-script nil)
-(setq font-latex-fontify-sectioning 'color)
-; modify Beamer as well
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(font-latex-slide-title-face ((t (:inherit font-lock-type-face)))))
+;; (setq font-latex-fontify-script nil)
+;; (setq font-latex-fontify-sectioning 'color)
+;; ; modify Beamer as well
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(font-latex-slide-title-face ((t (:inherit font-lock-type-face)))))
 
-(setq TeX-PDF-mode t)
-(when (string-match "apple-darwin" system-configuration)
-;for OS X only
-  (setq TeX-view-program-list
-      '(("DVI Viewer" "open %o")
-	("PDF Viewer" "open %o")
-	("HTML Viewer" "open %o"))))
+;; (setq TeX-PDF-mode t)
+;; (when (string-match "apple-darwin" system-configuration)
+;; ;for OS X only
+;;   (setq TeX-view-program-list
+;;       '(("DVI Viewer" "open %o")
+;;	("PDF Viewer" "open %o")
+;;	("HTML Viewer" "open %o"))))
 
-(setq preview-image-type 'png)
+;; (setq preview-image-type 'png)
 
-;; jade-mode &  stylus-mode
-(add-to-list 'load-path "~/.emacs.d/vendor/jade-mode")
-(require 'sws-mode)
-(require 'jade-mode)
-(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-(require 'stylus-mode)
 
 ;; js-hint mode
 (add-to-list 'load-path "~/.emacs.d/vendor/jshint-mode")
@@ -222,7 +186,7 @@
      (lambda () (flymake-mode t)))
 
 ;; Turns on flymake for all files which have a flymake mode
-;(add-hook 'find-file-hook 'flymake-find-file-hook)
+(add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; Zencoding mode
 (add-to-list 'load-path "~/.emacs.d/vendor/zencoding-mode")
@@ -257,6 +221,7 @@
 ;;To get out of multiple-cursors-mode, press <return> or C-g.
 ;; The latter will first disable multiple regions before disabling multiple cursors.
 ;; If you want to insert a newline in multiple-cursors-mode, use C-j.
+(setq mc/list-file "~/.emacs.d/tmp/.mc-lists.el")
 
 	      ;;;;;;;;;;;;;;;;; PACKAGE CONFIGURE - END   ;;;;;;;;;;;;;;;;;;;;;
 
