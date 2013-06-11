@@ -1,4 +1,3 @@
-
 ;; TODO
 ;; install a smarttab, but only use  space as a tab
 ;;
@@ -226,7 +225,7 @@
 
 ;; Zencoding mode
 
-(add-to-list 'load-path "~/emacs.d/vendor/zencoding-mode-0.5.1")
+(add-to-list 'load-path "~/.emacs.d/vendor/zencoding-mode-0.5.1")
 (require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode) ;; Auto-start on any markup modes
 
@@ -246,3 +245,18 @@
 
 (setq line-spacing 5)
 (put 'downcase-region 'disabled nil)
+
+;; multiple cursor
+(add-to-list 'load-path "~/.emacs.d/vendor/multiple-cursors")
+(require 'multiple-cursors)
+;;When you have an active region that spans multiple lines,
+;; the following will add a cursor to each line:
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;;When you want to add multiple cursors not based on continuous lines,
+;; but based on keywords in the buffer, use:
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;;To get out of multiple-cursors-mode, press <return> or C-g.
+;; The latter will first disable multiple regions before disabling multiple cursors.
+;; If you want to insert a newline in multiple-cursors-mode, use C-j.
