@@ -1,3 +1,12 @@
 [submodule "emacs.d/vendor/multiple-cursors"]
 	path = emacs.d/vendor/multiple-cursors
 	url = git://github.com/magnars/multiple-cursors.el.git
+[submodule "emacs.d/vendor/auto-complete"]
+	path = emacs.d/vendor/auto-complete
+	url = git://github.com/auto-complete/auto-complete.git
+[submodule "emacs.d/vendor/auto-complete-popup"]
+	path = emacs.d/vendor/auto-complete-popup
+	url = git://github.com/auto-complete/popup-el.git
+[submodule "emacs.d/vendor/zencoding-mode"]
+	path = emacs.d/vendor/zencoding-mode
+	url = git://github.com/smihica/zencoding.git

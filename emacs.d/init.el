@@ -14,11 +14,12 @@
 ;; Mode specific config
 (load "config-cc")
 
+
 	      ;;;;;;;;;;;;;;;;; PACKAGE.EL INSTALL   - START  ;;;;;;;;;;;;;;;;;
 
 ; list the packages you want
 (setq package-list '(smex css-mode rainbow-mode flymake-cursor color-theme
-			  auctex zencoding-mode buffer-move
+			  auctex  buffer-move
 			  go-mode flymake-go sml-mode less-css-mode markdown-mode))
 
 ; list the repositories containing them
@@ -81,6 +82,7 @@
 			     yas/ido-prompt))
 
 ;; ;;auto-complete
+(add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-popup")
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/narzac/ac-dict")
@@ -96,73 +98,73 @@
 (setq ac-auto-start nil)
 (setq ac-quick-help-delay 0.5)
 
-;; The modes that AC will start automatically.
-(setq ac-modes
-		'(emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode
-				  html-mode js-mode js2-mode
-				  c-mode cc-mode c++-mode java-mode
-				  perl-mode cperl-mode python-mode ruby-mode
-				  ecmascript-mode javascript-mode php-mode css-mode
-				  makefile-mode sh-mode fortran-mode f90-mode ada-mode
-				  xml-mode sgml-mode go-mode
-				  emms-tag-editor-mode
-				  asm-mode
-				  org-mode jade-mode stylus-mode sws-mode))
+;; ;; The modes that AC will start automatically.
+;; (setq ac-modes
+;;		'(emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode
+;;				  html-mode js-mode js2-mode
+;;				  c-mode cc-mode c++-mode java-mode
+;;				  perl-mode cperl-mode python-mode ruby-mode
+;;				  ecmascript-mode javascript-mode php-mode css-mode
+;;				  makefile-mode sh-mode fortran-mode f90-mode ada-mode
+;;				  xml-mode sgml-mode go-mode
+;;				  emms-tag-editor-mode
+;;				  asm-mode
+;;				  org-mode jade-mode stylus-mode sws-mode))
 
-;; The sources for common all mode.
-(custom-set-variables
- '(ac-sources
-	 '(
-	   ac-source-abbrev
-	   ac-source-css-property
-	   ac-source-dictionary
-	   ac-source-features
-	   ac-source-filename
-;          ac-source-files-in-current-dir ;; eshell
-	   ac-source-words-in-buffer
-;          ac-source-words-in-same-mode-buffers
-	   )))
+;; ;; The sources for common all mode.
+;; (custom-set-variables
+;;  '(ac-sources
+;;	 '(
+;;	   ac-source-abbrev
+;;	   ac-source-css-property
+;;	   ac-source-dictionary
+;;	   ac-source-features
+;;	   ac-source-filename
+;; ;          ac-source-files-in-current-dir ;; eshell
+;;	   ac-source-words-in-buffer
+;; ;          ac-source-words-in-same-mode-buffers
+;;	   )))
 
-;; auto-complete hooks for emcas-lisp
-(add-hook 'emacs-lisp-mode (lambda () (add-to-list 'ac-sources '(ac-source-functions ac-source-symbols ac-source-variables ))))
+;; ;; auto-complete hooks for emcas-lisp
+;; (add-hook 'emacs-lisp-mode (lambda () (add-to-list 'ac-sources '(ac-source-functions ac-source-symbols ac-source-variables ))))
 
-;; auto-complete-yasnippet integration
-(require 'auto-complete-yasnippet)
-(setq ac-sources (append '(ac-source-yasnippet) ac-sources))
+;; ;; auto-complete-yasnippet integration
+;; (require 'auto-complete-yasnippet)
+;; (setq ac-sources (append '(ac-source-yasnippet) ac-sources))
 
-;;auto-complete-auctex integration
-(add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-auctex")
-(require 'auto-complete-auctex)
+;; ;;auto-complete-auctex integration
+;; (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-auctex")
+;; (require 'auto-complete-auctex)
 
-;auto-complete-clang integration
-(require 'auto-complete-clang)
-(setq ac-clang-flags
-	  (mapcar (lambda (item)(concat "-I" item))
-			  (split-string
-			   "
-.
-./inc
-./include
-/usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include
-/usr/include/c++/4.2.1
-/usr/include/c++/4.2.1/backward
-/usr/local/include
-/Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include
-/usr/include
-/System/Library/Frameworks
-/Library/Frameworks
-/usr/clang-ide/lib/c++/v1
-"
-			   )))
+;; ;auto-complete-clang integration
+;; (require 'auto-complete-clang)
+;; (setq ac-clang-flags
+;;	  (mapcar (lambda (item)(concat "-I" item))
+;;			  (split-string
+;;			   "
+;; .
+;; ./inc
+;; ./include
+;; /usr/llvm-gcc-4.2/bin/../lib/gcc/i686-apple-darwin11/4.2.1/include
+;; /usr/include/c++/4.2.1
+;; /usr/include/c++/4.2.1/backward
+;; /usr/local/include
+;; /Applications/Xcode.app/Contents/Developer/usr/llvm-gcc-4.2/lib/gcc/i686-apple-darwin11/4.2.1/include
+;; /usr/include
+;; /System/Library/Frameworks
+;; /Library/Frameworks
+;; /usr/clang-ide/lib/c++/v1
+;; "
+;;			   )))
 
-;; c++11 for autocomplete-clang
-(setq ac-clang-flags (append '( "-std=c++11" "-stdlib=libc++" ) ac-clang-flags))
+;; ;; c++11 for autocomplete-clang
+;; (setq ac-clang-flags (append '( "-std=c++11" "-stdlib=libc++" ) ac-clang-flags))
 
-(defun my-ac-cc-mode-setup ()
-  (setq ac-sources (append '(ac-source-clang) ac-sources)))
+;; (defun my-ac-cc-mode-setup ()
+;;   (setq ac-sources (append '(ac-source-clang) ac-sources)))
 
-(setq clang-completion-suppress-error 't)
-(add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+;; (setq clang-completion-suppress-error 't)
+;; (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
 
 ;; js2-mode
 (add-to-list 'load-path "~/.emacs.d/vendor/js2-mode")
@@ -224,10 +226,11 @@
 ;(add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; Zencoding mode
-
-(add-to-list 'load-path "~/.emacs.d/vendor/zencoding-mode-0.5.1")
+(add-to-list 'load-path "~/.emacs.d/vendor/zencoding-mode")
 (require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'zencoding-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'zencoding-mode-hook (lambda () (setq zencoding-indentation 2))) ;indent 2 spaces.
 
 ;;buffer-move
 (require 'buffer-move)
@@ -237,14 +240,9 @@
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'js2-mode 'rainbow-mode)
 (add-hook 'sgml-mode-hook 'rainbow-mode)
-
-
-;; auto start tmpl
+(global-set-key (kbd "C-j") 'zencoding-expand-line)
+;; auto start html mode for  *.tmpl
 (add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
-	      ;;;;;;;;;;;;;;;;; PACKAGE CONFIGURE - END   ;;;;;;;;;;;;;;;;;;;;;
-
-(setq line-spacing 5)
-(put 'downcase-region 'disabled nil)
 
 ;; multiple cursor
 (add-to-list 'load-path "~/.emacs.d/vendor/multiple-cursors")
@@ -260,3 +258,8 @@
 ;;To get out of multiple-cursors-mode, press <return> or C-g.
 ;; The latter will first disable multiple regions before disabling multiple cursors.
 ;; If you want to insert a newline in multiple-cursors-mode, use C-j.
+
+	      ;;;;;;;;;;;;;;;;; PACKAGE CONFIGURE - END   ;;;;;;;;;;;;;;;;;;;;;
+
+(setq line-spacing 5)
+(put 'downcase-region 'disabled nil)
