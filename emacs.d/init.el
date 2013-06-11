@@ -76,7 +76,7 @@
 (require 'yasnippet)
 (require 'dropdown-list)
 (yas/global-mode 1)
-(yas/load-directory "~/.emacs.d/narzac/snippets")
+(yas/load-directory "~/.emacs.d/narzac/mysnippets")
 (setq yas/prompt-functions '(yas/dropdown-prompt
 			     yas/completing-prompt
 			     yas/ido-prompt))
@@ -84,6 +84,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-popup")
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete")
 (require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/narzac/myac-dicts")
 (setq ac-comphist-file  "~/.emacs.d/tmp/ac-comphist.dat")
 (ac-config-default)
 (global-auto-complete-mode t)

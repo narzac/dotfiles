@@ -10,3 +10,6 @@
 [submodule "emacs.d/vendor/zencoding-mode"]
 	path = emacs.d/vendor/zencoding-mode
 	url = git://github.com/smihica/zencoding.git
+[submodule "emacs.d/vendor/yasnippet"]
+	path = emacs.d/vendor/yasnippet
+	url = http://github.com/capitaomorte/yasnippet
