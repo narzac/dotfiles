@@ -11,9 +11,6 @@
 (load "utf8")
 (load "functions")
 (load "env")
-;; Mode specific config
-(load "config-cc")
-
 
 	      ;;;;;;;;;;;;;;;;; PACKAGE.EL INSTALL   - START  ;;;;;;;;;;;;;;;;;
 
@@ -74,6 +71,7 @@
 ;; yasnippet
 (add-to-list 'load-path "~/.emacs.d/vendor/yasnippet")
 (require 'yasnippet)
+(add-to-list 'load-path "~/.emacs.d/vendor")
 (require 'dropdown-list)
 (yas/global-mode 1)
 (yas/load-directory "~/.emacs.d/narzac/mysnippets")
