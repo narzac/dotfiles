@@ -125,9 +125,10 @@
 ;; auto-complete hooks for emacs-lisp
 (add-hook 'emacs-lisp-mode (lambda () (add-to-list 'ac-sources '(ac-source-functions ac-source-symbols ac-source-variables ))))
 
-;; ;; auto-complete-yasnippet integration
-;; (require 'auto-complete-yasnippet)
-;; (setq ac-sources (append '(ac-source-yasnippet) ac-sources))
+;; auto-complete-yasnippet integration
+(add-to-list 'load-path "~/.emacs.d/vendor")
+(require 'auto-complete-yasnippet)
+(setq ac-sources (append '(ac-source-yasnippet) ac-sources))
 
 ;; ;;auto-complete-auctex integration
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-auctex")
@@ -183,8 +184,8 @@
 (add-hook 'javascript-mode-hook
      (lambda () (flymake-mode t)))
 
-;; Turns on flymake for all files which have a flymake mode
-(add-hook 'find-file-hook 'flymake-find-file-hook)
+;; ;; Turns on flymake for all files which have a flymake mode
+;; (add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; Zencoding mode
 (add-to-list 'load-path "~/.emacs.d/vendor/zencoding-mode")
