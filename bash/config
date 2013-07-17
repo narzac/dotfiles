@@ -38,8 +38,8 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
-export PS1_LOCAL_ROOT="\[$ERED\]\h\[$NO_COLOR\] \[$EBLUE\]\w \$ \[$NO_COLOR\]\[$EWHITE\]"
-export PS1_LOCAL_USER="\[$EGREEN\]\u\[$NO_COLOR\] \[$EBLUE\]\w \$ \[$NO_COLOR\]\[$EWHITE\]"
+export PS1_LOCAL_ROOT="\[$ERED\]\h\[$NO_COLOR\] \[$EBLUE\]\w\[$NO_COLOR\]\[$EMAGENTA\]\$(__git_ps1)\[$NO_COLOR\]\[$EWHITE\] # "
+export PS1_LOCAL_USER="\[$EGREEN\]\u\[$NO_COLOR\] \[$EBLUE\]\w\[$NO_COLOR\]\[$EMAGENTA\]\$(__git_ps1)\[$NO_COLOR\]\[$EWHITE\] \$ "
 export PS1_REMOTE="\[$ECYAN\]\u@\h\[$NO_COLOR\] \[$EBLUE\]\w \$ \[$NO_COLOR\]\[$EWHITE\]"
 #PS1_EXAMPLE="\[$EYELLOW\][\[$NO_COLOR\]\[$EGREEN\]\u@\h\[$NO_COLOR\]\[$ECYAN\] \w\[$NO_COLOR\]\[$EYELLOW\]]\[$NO_COLOR\]\[$ERED\]\$\[$NO_COLOR\]\[$EWHITE\]\n-> "
 

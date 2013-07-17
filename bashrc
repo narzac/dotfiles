@@ -1,14 +1,13 @@
 #!/bin/bash
-MYUSER="narzac"
-MYHOME="/Users"
-export BASEDIR="$MYHOME"/"$MYUSER"/Code/dotfiles
+# symbolic link .bashrc can not be relative path
+SELF=$(test -L "$BASH_SOURCE" && readlink -n "$BASH_SOURCE" || echo "$BASH_SOURCE")
+export BASEDIR=$(dirname $SELF)
+export CURRENT_USEr=$(whoami)
 
 function is_superuser() {
     if [[  "$(whoami)" == "root"  ]]; then
-       export CURRENT_USER="root"
        return 0
     fi
-    export CURRENT_USER="$MYUSER"
     return 1
 }
 
@@ -19,9 +18,19 @@ function is_in_remote() {
     return 0
 }
 
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+
 for file in "$BASEDIR"/bash/*; do
     source $file
 done
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+source "$BASEDIR"/git-prompt.sh
+
 
 if is_in_remote; then
     PS1=$PS1_REMOTE
@@ -32,5 +41,3 @@ else
 	PS1=$PS1_LOCAL_USER
     fi
 fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
