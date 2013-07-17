@@ -35,7 +35,6 @@
 	(set-face-font 'default "Monospace-10"))
 
 (global-hl-line-mode 1)			; highlight current line
-(set-face-background 'hl-line "gray6") ;; Great for black background
 (global-linum-mode -1)			; don't add line numbers on the left
 
 ;; under mac, have Command as Meta and keep Option for localized input
