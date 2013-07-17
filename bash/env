@@ -10,6 +10,8 @@ export PATH="/usr/local/Cellar/smlnj/110.75/libexec/bin:${PATH}"
 export QTDIR="~/Qt5.0.0/5.0.0/clang_64"
 export PATH="${QTDIR}/bin:${PATH}"
 export PYTHONSTARTUP=~/.pystartup
-export PATH="${PATH}:~/Dropbox/home/code/go/bin"
+export PATH="${PATH}:~/Dropbox/home/code/go/bin:~/bin"
+export PATH="~/local/bin/:${PATH}"
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #sqlite3 gotube fix
 #export PKG_CONFIG_PATH="/usr/local/Cellar/sqlite/3.7.16.2/lib/pkgconfig"
