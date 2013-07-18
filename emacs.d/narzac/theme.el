@@ -10,4 +10,4 @@
 
 ;; Vim Zenburn
 (add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/zenburn-emacs/")
-(load-theme 'zenburn)
+(load-theme 'zenburn t)

@@ -110,17 +110,16 @@
 
 ;; The sources for common all mode.
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(ac-sources
-	 '(
-	   ac-source-abbrev
-	   ac-source-css-property
-	   ac-source-dictionary
-	   ac-source-features
-	   ac-source-filename
-;          ac-source-files-in-current-dir ;; eshell
-	   ac-source-words-in-buffer
-;          ac-source-words-in-same-mode-buffers
-	   )))
+   (quote
+    (ac-source-abbrev ac-source-css-property ac-source-dictionary ac-source-features ac-source-filename ac-source-words-in-buffer)) t)
+ '(custom-safe-themes
+   (quote
+    ("dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default))))
 
 ;; auto-complete hooks for emacs-lisp
 (add-hook 'emacs-lisp-mode (lambda () (add-to-list 'ac-sources '(ac-source-functions ac-source-symbols ac-source-variables ))))
@@ -148,6 +147,10 @@
 
 (require 'flymake)
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(flymake-errline ((((class color)) (:background "#550000" :overline "#550000" :underline "#550000"))))
  '(flymake-warnline ((((class color)) (:background "#555500" :overline "#555500" :underline "#555500")))))
 
