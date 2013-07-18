@@ -16,3 +16,6 @@
 [submodule "emacs.d/vendor/zenburn-emacs"]
 	path = emacs.d/vendor/zenburn-emacs
 	url = https://github.com/bbatsov/zenburn-emacs.git
+[submodule "emacs.d/vendor/js2-mode"]
+	path = emacs.d/vendor/js2-mode
+	url = https://github.com/mooz/js2-mode.git
