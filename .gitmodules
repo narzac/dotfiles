@@ -13,3 +13,6 @@
 [submodule "emacs.d/vendor/yasnippet"]
 	path = emacs.d/vendor/yasnippet
 	url = http://github.com/capitaomorte/yasnippet
+[submodule "emacs.d/vendor/zenburn-emacs"]
+	path = emacs.d/vendor/zenburn-emacs
+	url = https://github.com/bbatsov/zenburn-emacs.git
