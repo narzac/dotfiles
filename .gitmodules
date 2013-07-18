@@ -19,3 +19,6 @@
 [submodule "emacs.d/vendor/js2-mode"]
 	path = emacs.d/vendor/js2-mode
 	url = https://github.com/mooz/js2-mode.git
+[submodule "emacs.d/vendor/jshint-mode"]
+	path = emacs.d/vendor/jshint-mode
+	url = https://github.com/daleharvey/jshint-mode.git
