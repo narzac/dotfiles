@@ -238,11 +238,3 @@
 (add-to-list 'Info-default-directory-list "~/.emacs.d/vendor/emacs/haskell-mode/")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-(add-hook 'haskell-mode-hook 'font-lock-mode)
-(add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
-(define-key haskell-mode-map (kbd "C-,") 'haskell-move-nested-left)
-(define-key haskell-mode-map (kbd "C-.") 'haskell-move-nested-right)
-(require 'haskell-unicode-input-method)
-(add-hook 'haskell-mode-hook
-  (lambda () (set-input-method "haskell-unicode")))
-(add-to-list 'load-path "~/.emacs.d/vendor/haskell-mode/emacs-haskell-unicode-input-method")
