@@ -22,3 +22,6 @@
 [submodule "emacs.d/vendor/jshint-mode"]
 	path = emacs.d/vendor/jshint-mode
 	url = https://github.com/daleharvey/jshint-mode.git
+[submodule "emacs.d/vendor/haskell-mode"]
+	path = emacs.d/vendor/haskell-mode
+	url = https://github.com/haskell/haskell-mode.git

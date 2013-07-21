@@ -106,7 +106,7 @@
 				  xml-mode sgml-mode go-mode
 				  emms-tag-editor-mode
 				  asm-mode
-				  org-mode jade-mode stylus-mode sws-mode))
+				  org-mode jade-mode stylus-mode sws-mode haskell-mode))
 
 ;; The sources for common all mode.
 (custom-set-variables
@@ -226,7 +226,23 @@
 ;; If you want to insert a newline in multiple-cursors-mode, use C-j.
 (setq mc/list-file "~/.emacs.d/tmp/.mc-lists.el")
 
-	      ;;;;;;;;;;;;;;;;; PACKAGE CONFIGURE - END   ;;;;;;;;;;;;;;;;;;;;;
 
+;; TODO: these two line is auto generated, move to an appropriate configuration
 (setq line-spacing 5)
 (put 'downcase-region 'disabled nil)
+
+;; haskell-mode
+;; brew install  ghc
+(add-to-list 'load-path "~/.emacs.d/vendor/haskell-mode/")
+(require 'haskell-mode-autoloads)
+(add-to-list 'Info-default-directory-list "~/.emacs.d/vendor/emacs/haskell-mode/")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'font-lock-mode)
+(add-hook 'haskell-mode-hook 'imenu-add-menubar-index)
+(define-key haskell-mode-map (kbd "C-,") 'haskell-move-nested-left)
+(define-key haskell-mode-map (kbd "C-.") 'haskell-move-nested-right)
+(require 'haskell-unicode-input-method)
+(add-hook 'haskell-mode-hook
+  (lambda () (set-input-method "haskell-unicode")))
+(add-to-list 'load-path "~/.emacs.d/vendor/haskell-mode/emacs-haskell-unicode-input-method")
