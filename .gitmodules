@@ -25,3 +25,6 @@
 [submodule "emacs.d/vendor/haskell-mode"]
 	path = emacs.d/vendor/haskell-mode
 	url = https://github.com/haskell/haskell-mode.git
+[submodule "emacs.d/vendor/yaml-mode"]
+	path = emacs.d/vendor/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
