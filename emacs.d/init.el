@@ -238,3 +238,7 @@
 (add-to-list 'Info-default-directory-list "~/.emacs.d/vendor/emacs/haskell-mode/")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
+;; yaml-mode
+(add-to-list 'load-path "~/.emacs.d/vendor/yaml-mode/")
+(require 'yaml-mode )

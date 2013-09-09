@@ -53,3 +53,4 @@ alias clang11='clang++ -std=c++11  -I/usr/clang-ide/lib/c++/v1/ -stdlib=libc++ -
 
 alias asus='sudo nvram boot-args="iog=0x0"'
 alias nasus='sudo nvram -d boot-args'
+alias serve='python -m SimpleHTTPServer'
