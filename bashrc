@@ -2,7 +2,7 @@
 # symbolic link .bashrc can not be relative path
 SELF=$(test -L "$BASH_SOURCE" && readlink -n "$BASH_SOURCE" || echo "$BASH_SOURCE")
 export BASEDIR=$(dirname $SELF)
-export CURRENT_USEr=$(whoami)
+
 
 function is_superuser() {
     if [[  "$(whoami)" == "root"  ]]; then
