@@ -13,3 +13,5 @@
 	logl = log --oneline --decorate
 [apply]
 	whitespace = nowarn
+[push]
+	default = matching
