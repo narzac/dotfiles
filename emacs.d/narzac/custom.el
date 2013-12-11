@@ -1,4 +1,8 @@
-(server-start)
+;; No more: Unable to start server 
+(require 'server)
+(or (server-running-p)
+    (server-start))
+
 (setq visible-bell t)
 (setq debug-on-error t)
 
