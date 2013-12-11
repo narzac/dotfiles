@@ -1,7 +1,10 @@
 #!/bin/bash
+# start a new terminal
+alias e="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw"
 
-alias e="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
-alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
+# start a new GUI
+# emacs (/usr/local/bin/emacs)
+# /usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs  "$@" &
 
 alias c="clear"
 alias rm='rm -i'
