@@ -168,12 +168,6 @@
 ;; ;; Turns on flymake for all files which have a flymake mode
 ;; (add-hook 'find-file-hook 'flymake-find-file-hook)
 
-;; Zencoding mode
-(add-to-list 'load-path "~/.emacs.d/vendor/zencoding-mode")
-(require 'zencoding-mode)
-(add-hook 'sgml-mode-hook 'zencoding-mode) ;; Auto-start on any markup modes
-(add-hook 'css-mode-hook  'zencoding-mode) ;; enable Emmet's css abbreviation.
-(add-hook 'zencoding-mode-hook (lambda () (setq zencoding-indentation 2))) ;indent 2 spaces.
 
 ;;buffer-move
 (require 'buffer-move)
