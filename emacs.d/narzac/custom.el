@@ -1,7 +1,8 @@
 ;; No more: Unable to start server 
-(require 'server)
-(or (server-running-p)
-    (server-start))
+;; Temporarily comment out to test distnoted CPU problem
+;(require 'server)
+;(or (server-running-p)
+;    (server-start))
 
 (setq visible-bell t)
 (setq debug-on-error t)
