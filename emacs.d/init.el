@@ -159,29 +159,6 @@
 ;(setq flymake-log-level 3)
 (require 'flymake-cursor)
 
-;;  (require 'tex-site)
-
-;; (setq font-latex-fontify-script nil)
-;; (setq font-latex-fontify-sectioning 'color)
-;; ; modify Beamer as well
-;; (custom-set-faces
-;;  ;; custom-set-faces was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(font-latex-slide-title-face ((t (:inherit font-lock-type-face)))))
-
-;; (setq TeX-PDF-mode t)
-;; (when (string-match "apple-darwin" system-configuration)
-;; ;for OS X only
-;;   (setq TeX-view-program-list
-;;       '(("DVI Viewer" "open %o")
-;;	("PDF Viewer" "open %o")
-;;	("HTML Viewer" "open %o"))))
-
-;; (setq preview-image-type 'png)
-
-
 ;; js-hint mode
 (add-to-list 'load-path "~/.emacs.d/vendor/jshint-mode")
 (require 'flymake-jshint)
@@ -242,3 +219,27 @@
 ;; yaml-mode
 (add-to-list 'load-path "~/.emacs.d/vendor/yaml-mode/")
 (require 'yaml-mode )
+
+
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
+(require 'tex-site)
+
+(setq font-latex-fontify-script nil)
+(setq font-latex-fontify-sectioning 'color)
+; modify Beamer as well
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(font-latex-slide-title-face ((t (:inherit font-lock-type-face)))))
+
+(setq TeX-PDF-mode t)
+(when (string-match "apple-darwin" system-configuration)
+;for OS X only
+  (setq TeX-view-program-list
+      '(("DVI Viewer" "open %o")
+	("PDF Viewer" "open %o")
+	("HTML Viewer" "open %o"))))
+
+(setq preview-image-type 'png)
