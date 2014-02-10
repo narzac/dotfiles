@@ -244,3 +244,7 @@
 	("HTML Viewer" "open %o"))))
 
 (setq preview-image-type 'png)
+
+;; editorconfig support
+(add-to-list 'load-path "~/.emacs.d/vendor/editorconfig-emacs/")
+(load "editorconfig")

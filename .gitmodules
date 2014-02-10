@@ -28,3 +28,6 @@
 [submodule "emacs.d/vendor/emmet-mode"]
 	path = emacs.d/vendor/emmet-mode
 	url = https://github.com/smihica/emmet-mode.git
+[submodule "emacs.d/vendor/editorconfig-emacs"]
+	path = emacs.d/vendor/editorconfig-emacs
+	url = https://github.com/editorconfig/editorconfig-emacs.git
