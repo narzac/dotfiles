@@ -26,3 +26,4 @@
 ;; (setq auto-save-default t)		; Yes auto save good
 ;; (setq auto-save-interval 100) ; Number of input chars between auto-saves
 ;; (setq auto-save-timeout 300) ; Number of seconds idle time before auto-save
+(setq auto-save-default nil)
