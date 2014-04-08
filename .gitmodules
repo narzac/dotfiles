@@ -34,3 +34,6 @@
 [submodule "emacs.d/vendor/scss-mode"]
 	path = emacs.d/vendor/scss-mode
 	url = https://github.com/antonj/scss-mode.git
+[submodule "emacs.d/vendor/web-mode"]
+	path = emacs.d/vendor/web-mode
+	url = https://github.com/fxbois/web-mode.git
