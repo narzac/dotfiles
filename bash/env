@@ -4,8 +4,9 @@ export GREP_COLOR="1;33"
 export LESS="-QR" # Tell less not to beep and also display colours
 export HISTCONTROL=ignoredups
 export PATH="/usr/local/Cellar/gcc48/4.8.2/bin:${PATH}"
+export GOROOT="/Users/narzac/opt/go"
 export GOPATH="/Users/narzac/code/go"
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/local/go/bin:/usr/local/bin:/usr/local/share/python:${PATH}"
+export PATH="$GOROOT/bin:/usr/local/sbin:/usr/local/bin:/usr/local/go/bin:/usr/local/bin:/usr/local/share/python:${PATH}"
 export PATH="/usr/local/Cellar/smlnj/110.75/libexec/bin:${PATH}"
 export QTDIR="~/Qt5.0.0/5.0.0/clang_64"
 export PATH="${QTDIR}/bin:${PATH}"
@@ -17,3 +18,4 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # zlib gotube, macosx fix
 export PKG_CONFIG_PATH="/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig"
 export NACL_SDK_ROOT="/Users/narzac/src/nacl_sdk/pepper_31"
+export GRUNT_DEBUG=1
