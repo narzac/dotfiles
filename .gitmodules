@@ -31,3 +31,6 @@
 [submodule "emacs.d/vendor/editorconfig-emacs"]
 	path = emacs.d/vendor/editorconfig-emacs
 	url = https://github.com/editorconfig/editorconfig-emacs.git
+[submodule "emacs.d/vendor/scss-mode"]
+	path = emacs.d/vendor/scss-mode
+	url = https://github.com/antonj/scss-mode.git

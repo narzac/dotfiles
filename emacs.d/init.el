@@ -1,6 +1,4 @@
-;; TODO
-;; install a smarttab, but only use  space as a tab
-;;
+;; TODO: install a smarttab, but only use  space as a tab
 
 (add-to-list 'load-path "~/.emacs.d/narzac")
 ;; General configs
@@ -12,34 +10,30 @@
 (load "functions")
 (load "env")
 
-	      ;;;;;;;;;;;;;;;;; PACKAGE.EL INSTALL   - START  ;;;;;;;;;;;;;;;;;
-
-; list the packages you want
+;; INSTALL A FEW PACKAGES WITH PACKAGE MANAGER
+;; list the packages you want
 (setq package-list '(smex css-mode rainbow-mode flymake-cursor
 			  buffer-move
 			  go-mode flymake-go  less-css-mode markdown-mode))
 
-; list the repositories containing them
+;; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
 			 ("marmalade" . "http://marmalade-repo.org/packages/")))
 
-; activate all the packages (in particular autoloads)
+;; activate all the packages (in particular autoloads)
 (package-initialize)
 
-; fetch the list of packages available
+;; fetch the list of packages available
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-; install the missing packages
+;; install the missing packages
 (dolist (package package-list)
   (when (not (package-installed-p package))
     (package-install package)))
 
-	      ;;;;;;;;;;;;;;;;; PACKAGE.EL INSTALL   - END   ;;;;;;;;;;;;;;;;;;;
-
-	      ;;;;;;;;;;;;;;;;; PACKAGE CONFIGURE - START  ;;;;;;;;;;;;;;;;;;;;;
-
+;; CONFIGURE INSTALLED PACKAGES
 ;; use ido for minibuffer completion
 (require 'cl)
 
@@ -49,7 +43,7 @@
 (setq ido-enable-flex-matching t) ;; fuzy matching
 (setq ido-use-filename-at-point 'guess)
 (setq ido-show-dot-for-dired t)
-(setq ido-enable-last-directory-history nil) ; forget latest selected directory names
+(setq ido-enable-last-directory-history nil) ;; forget latest selected directory names
 
 (require 'smex)
 (setq smex-save-file "~/.emacs.d/tmp/.smex-items")
@@ -90,23 +84,23 @@
 (define-key ac-mode-map (kbd "TAB") 'auto-complete)
 (ac-set-trigger-key "TAB")
 (setq ac-auto-show-menu nil)
-;(setq ac-dwim t)                        ;Do what i mean
-(setq ac-override-local-map nil)        ;don't override local map
+;;(setq ac-dwim t) ;;Do what i mean
+(setq ac-override-local-map nil)        ;;don't override local map
 (setq ac-auto-start nil)
 (setq ac-quick-help-delay 0.5)
 
 ;; The modes that AC will start automatically.
 (setq ac-modes
-		'(emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode
-				  html-mode js-mode js2-mode
-				  c-mode cc-mode c++-mode java-mode
-				  perl-mode cperl-mode python-mode ruby-mode
-				  ecmascript-mode javascript-mode php-mode css-mode
-				  makefile-mode sh-mode fortran-mode f90-mode ada-mode
-				  xml-mode sgml-mode go-mode
-				  emms-tag-editor-mode
-				  asm-mode
-				  org-mode jade-mode stylus-mode sws-mode haskell-mode))
+      '(emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode
+			html-mode js-mode js2-mode
+			c-mode cc-mode c++-mode java-mode
+			perl-mode cperl-mode python-mode ruby-mode
+			ecmascript-mode javascript-mode php-mode css-mode
+			makefile-mode sh-mode fortran-mode f90-mode ada-mode
+			xml-mode sgml-mode go-mode
+			emms-tag-editor-mode
+			asm-mode
+			org-mode jade-mode stylus-mode sws-mode haskell-mode))
 
 ;; The sources for common all mode.
 (custom-set-variables
@@ -156,14 +150,14 @@
  '(flymake-warnline ((((class color)) (:background "#555500" :overline "#555500" :underline "#555500")))))
 
 
-;(setq flymake-log-level 3)
+;;(setq flymake-log-level 3)
 (require 'flymake-cursor)
 
 ;; js-hint mode
 (add-to-list 'load-path "~/.emacs.d/vendor/jshint-mode")
 (require 'flymake-jshint)
 (add-hook 'javascript-mode-hook
-     (lambda () (flymake-mode t)))
+	  (lambda () (flymake-mode t)))
 
 ;; ;; Turns on flymake for all files which have a flymake mode
 ;; (add-hook 'find-file-hook 'flymake-find-file-hook)
@@ -227,7 +221,7 @@
 
 (setq font-latex-fontify-script nil)
 (setq font-latex-fontify-sectioning 'color)
-; modify Beamer as well
+;; modify Beamer as well
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -237,14 +231,23 @@
 
 (setq TeX-PDF-mode t)
 (when (string-match "apple-darwin" system-configuration)
-;for OS X only
+  ;;for OS X only
   (setq TeX-view-program-list
-      '(("DVI Viewer" "open %o")
-	("PDF Viewer" "open %o")
-	("HTML Viewer" "open %o"))))
+	'(("DVI Viewer" "open %o")
+	  ("PDF Viewer" "open %o")
+	  ("HTML Viewer" "open %o"))))
 
 (setq preview-image-type 'png)
 
 ;; editorconfig support
 (add-to-list 'load-path "~/.emacs.d/vendor/editorconfig-emacs/")
 (load "editorconfig")
+
+;; scss mode
+;; show emacs where to find sass executable
+(setq exec-path (cons (expand-file-name "~/.rvm/gems/ruby-1.9.3-p327/bin") exec-path))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/scss-mode/"))
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+;; disable auto compile on save
+(setq scss-compile-at-save nil)
