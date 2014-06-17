@@ -13,13 +13,13 @@
 ;; INSTALL A FEW PACKAGES WITH PACKAGE MANAGER
 ;; list the packages you want
 (setq package-list '(smex css-mode rainbow-mode flymake-cursor
-			  buffer-move
-			  go-mode flymake-go  less-css-mode markdown-mode))
+                          buffer-move
+                          go-mode flymake-go  less-css-mode markdown-mode))
 
 ;; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
-			 ("gnu" . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")))
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 ;; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -70,8 +70,8 @@
 (yas/global-mode 1)
 (yas/load-directory "~/.emacs.d/narzac/mysnippets")
 (setq yas/prompt-functions '(yas/dropdown-prompt
-			     yas/completing-prompt
-			     yas/ido-prompt))
+                             yas/completing-prompt
+                             yas/ido-prompt))
 ;; ;;auto-complete
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-popup")
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete")
@@ -92,15 +92,15 @@
 ;; The modes that AC will start automatically.
 (setq ac-modes
       '(emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode
-			html-mode js-mode js2-mode
-			c-mode cc-mode c++-mode java-mode
-			perl-mode cperl-mode python-mode ruby-mode
-			ecmascript-mode javascript-mode php-mode css-mode
-			makefile-mode sh-mode fortran-mode f90-mode ada-mode
-			xml-mode sgml-mode go-mode
-			emms-tag-editor-mode
-			asm-mode
-			org-mode jade-mode stylus-mode sws-mode haskell-mode))
+                        html-mode js-mode js2-mode
+                        c-mode cc-mode c++-mode java-mode
+                        perl-mode cperl-mode python-mode ruby-mode
+                        ecmascript-mode javascript-mode php-mode css-mode
+                        makefile-mode sh-mode fortran-mode f90-mode ada-mode
+                        xml-mode sgml-mode go-mode
+                        emms-tag-editor-mode
+                        asm-mode
+                        org-mode jade-mode stylus-mode sws-mode haskell-mode))
 
 ;; The sources for common all mode.
 (custom-set-variables
@@ -157,7 +157,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/jshint-mode")
 (require 'flymake-jshint)
 (add-hook 'javascript-mode-hook
-	  (lambda () (flymake-mode t)))
+          (lambda () (flymake-mode t)))
 
 ;; ;; Turns on flymake for all files which have a flymake mode
 ;; (add-hook 'find-file-hook 'flymake-find-file-hook)
@@ -233,15 +233,15 @@
 (when (string-match "apple-darwin" system-configuration)
   ;;for OS X only
   (setq TeX-view-program-list
-	'(("DVI Viewer" "open %o")
-	  ("PDF Viewer" "open %o")
-	  ("HTML Viewer" "open %o"))))
+        '(("DVI Viewer" "open %o")
+          ("PDF Viewer" "open %o")
+          ("HTML Viewer" "open %o"))))
 
 (setq preview-image-type 'png)
 
 ;; editorconfig support
-(add-to-list 'load-path "~/.emacs.d/vendor/editorconfig-emacs/")
-(load "editorconfig")
+;; (add-to-list 'load-path "~/.emacs.d/vendor/editorconfig-emacs/")
+;; (load "editorconfig")
 
 ;; scss mode
 ;; show emacs where to find sass executable
