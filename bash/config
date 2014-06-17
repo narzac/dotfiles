@@ -38,21 +38,22 @@ BMAGENTA='\e[45m'
 BCYAN='\e[46m'
 BWHITE='\e[47m'
 
-export PS1_LOCAL_ROOT="\[$ERED\]\h\[$NO_COLOR\] \[$EBLUE\]\w\[$NO_COLOR\]\[$EMAGENTA\]\$(__git_ps1)\[$NO_COLOR\]\[$EWHITE\] # "
-export PS1_LOCAL_USER="\[$EGREEN\]\u\[$NO_COLOR\] \[$EBLUE\]\w\[$NO_COLOR\]\[$EMAGENTA\]\$(__git_ps1)\[$NO_COLOR\]\[$EWHITE\] \$ "
+export PS1_LOCAL_ROOT="\[$ERED\]\h\[$NO_COLOR\] \[$EBLUE\]\w\[$NO_COLOR\]\[$EMAGENTA\] \$(grb_git_prompt)\[$NO_COLOR\]\[$EWHITE\] # "
+export PS1_LOCAL_USER="\[$EGREEN\]\u\[$NO_COLOR\] \[$EBLUE\]\w\[$NO_COLOR\]\[$EMAGENTA\] \$(grb_git_prompt)\[$NO_COLOR\]\[$EWHITE\] \$ "
 export PS1_REMOTE="\[$ECYAN\]\u@\h\[$NO_COLOR\] \[$EBLUE\]\w \$ \[$NO_COLOR\]\[$EWHITE\]"
-#PS1_EXAMPLE="\[$EYELLOW\][\[$NO_COLOR\]\[$EGREEN\]\u@\h\[$NO_COLOR\]\[$ECYAN\] \w\[$NO_COLOR\]\[$EYELLOW\]]\[$NO_COLOR\]\[$ERED\]\$\[$NO_COLOR\]\[$EWHITE\]\n-> "
 
 set bell-style visible # I hate noise
-HISTFILESIZE=10000
+# Append to the history file when exiting instead of overwriting it
+shopt -s histappend
+
 man() {
-	env \
-		LESS_TERMCAP_mb=$(printf "$EWHITE") \
-		LESS_TERMCAP_md=$(printf "$EWHITE") \
-		LESS_TERMCAP_me=$(printf "$NO_COLOR") \
-		LESS_TERMCAP_se=$(printf "$NO_COLOR") \
-		LESS_TERMCAP_so=$(printf "\e[1;47;30m") \
-		LESS_TERMCAP_ue=$(printf "$NO_COLOR") \
-		LESS_TERMCAP_us=$(printf "$CYAN") \
-			man "$@"
+    env \
+        LESS_TERMCAP_mb=$(printf "$EWHITE") \
+        LESS_TERMCAP_md=$(printf "$EWHITE") \
+        LESS_TERMCAP_me=$(printf "$NO_COLOR") \
+        LESS_TERMCAP_se=$(printf "$NO_COLOR") \
+        LESS_TERMCAP_so=$(printf "\e[1;47;30m") \
+        LESS_TERMCAP_ue=$(printf "$NO_COLOR") \
+        LESS_TERMCAP_us=$(printf "$CYAN") \
+        man "$@"
 }
