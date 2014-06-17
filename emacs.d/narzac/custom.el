@@ -78,3 +78,18 @@
 
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
+
+;; don't use tabs
+(setq-default indent-tabs-mode nil)
+;; set default tab width to 4 spaces
+(setq default-tab-width 4)
+(setq tab-width 4)
+
+;; sgml global tab width
+(setq sgml-basic-offset 4)
+
+;; html only tab config
+(add-hook 'html-mode-hook
+          (lambda ()
+            ;; Default indentation is usually 2 spaces, changing to 4.
+            (set (make-local-variable 'sgml-basic-offset) 4)))
