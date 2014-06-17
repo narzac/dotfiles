@@ -18,3 +18,15 @@ mkvirtenv() {
 virtenv() {
     [ "$#" -eq 1 ] && source ~/.virtualenvs/$1/bin/activate
 }
+
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "$EWHITE") \
+        LESS_TERMCAP_md=$(printf "$EWHITE") \
+        LESS_TERMCAP_me=$(printf "$NO_COLOR") \
+        LESS_TERMCAP_se=$(printf "$NO_COLOR") \
+        LESS_TERMCAP_so=$(printf "\e[1;47;30m") \
+        LESS_TERMCAP_ue=$(printf "$NO_COLOR") \
+        LESS_TERMCAP_us=$(printf "$CYAN") \
+        man "$@"
+}
