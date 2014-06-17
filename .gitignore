@@ -1,7 +1,6 @@
 *~
 .*.swp
 \#*#
-local-*
 .netrwhist
 .DS_Store
 .*
@@ -18,4 +17,3 @@ srecode-map.el
 eshell/
 tmp/
 url/
-
