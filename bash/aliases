@@ -1,6 +1,6 @@
 #!/bin/bash
 # start a new terminal
-alias e="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs -nw"
+alias e="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 
 # start a new GUI
 # emacs (/usr/local/bin/emacs)
@@ -45,6 +45,7 @@ touch ~/.bookmarks
 source ~/.bookmarks
 
 # Git aliases
+alias gti='git'
 alias gd='git diff'
 alias ga='git add'
 alias gst='git status -sb'
@@ -54,6 +55,4 @@ alias gcm='git commit -m '
 alias jsa='jekyll --server --auto'
 alias clang11='clang++ -std=c++11  -I/usr/clang-ide/lib/c++/v1/ -stdlib=libc++ -Wall -pedantic '
 
-alias asus='sudo nvram boot-args="iog=0x0"'
-alias nasus='sudo nvram -d boot-args'
 alias serve='python -m SimpleHTTPServer'
