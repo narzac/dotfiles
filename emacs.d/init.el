@@ -1,6 +1,6 @@
 ;; TODO: install a smarttab, but only use  space as a tab
 
-(add-to-list 'load-path "~/.emacs.d/narzac")
+(add-to-list 'load-path "~/.emacs.d/config")
 ;; General configs
 (load "theme")
 (load "custom")
@@ -68,7 +68,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (require 'dropdown-list)
 (yas/global-mode 1)
-(yas/load-directory "~/.emacs.d/narzac/mysnippets")
+(yas/load-directory "~/.emacs.d/config/mysnippets")
 (setq yas/prompt-functions '(yas/dropdown-prompt
                              yas/completing-prompt
                              yas/ido-prompt))
@@ -76,7 +76,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-popup")
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete")
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/narzac/myac-dicts")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/config/myac-dicts")
 (setq ac-comphist-file  "~/.emacs.d/tmp/ac-comphist.dat")
 (ac-config-default)
 (global-auto-complete-mode t)
