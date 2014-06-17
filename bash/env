@@ -1,9 +1,0 @@
-#!/bin/bash
-export CLICOLOR=1
-export GREP_COLOR="1;33"
-export LESS="-QR" # Tell less not to beep and also display colours
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-export HISTSIZE=10000
-export HISTCONTROL=ignoredups:erasedups
-# After each command, save and reload history
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
