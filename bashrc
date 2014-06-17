@@ -50,7 +50,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 
-for file in "$BASEDIR"/bash/{configs, exports, aliases, functions,local-$(whoami)}; do
+for file in "$BASEDIR"/bash/{configs,exports,aliases,functions,local-$(whoami)}; do
     source $file
 done
 
