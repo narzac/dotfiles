@@ -22,3 +22,7 @@ cask install transmission 2> /dev/null
 cask install ukelele 2> /dev/null
 cask install virtualbox 2> /dev/null
 cask install vlc 2> /dev/null
+cask install skype 2> /dev/null
+cask install firefox-nightly 2> /dev/null
+cask install firefox-aurora 2> /dev/null
+cask install vagrant 2> /dev/null

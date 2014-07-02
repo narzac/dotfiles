@@ -62,6 +62,12 @@ install webkit2png
 install zopfli
 install ghc
 install homebrew/versions/lua52
+install ruby
 
+install ssh-copy-id
+install python --with-brewed-openssl
+install python3 --with-brewed-openssl
+
+install ansible
 # Remove outdated versions from the cellar
 cleanup
