@@ -30,7 +30,7 @@ install ringojs
 install narwhal
 
 # Install emacs
-install emacs
+install emacs --HEAD --use-git-head --cocoa --srgb
 
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
@@ -58,9 +58,9 @@ install sqlmap
 install tree
 install ucspi-tcp # `tcpserver` et al.
 install webkit2png
-install xpdf
+#install xpdf # unmet dependency xQuartz
 install zopfli
-
+install ghc
 install homebrew/versions/lua52
 
 # Remove outdated versions from the cellar

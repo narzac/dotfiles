@@ -25,8 +25,8 @@ alias v="vim"
 alias reload=". ~/.bashrc"
 alias ea='e  "$BASEDIR"/bash/aliases && reload'
 alias eb='e  "$BASEDIR"/bashrc && reload'
-alias ec='e  "$BASEDIR"/bash/config && reload'
-alias ee='e  "$BASEDIR"/bash/env && reload'
+alias ec='e  "$BASEDIR"/bash/configs && reload'
+alias ee='e  "$BASEDIR"/bash/exports && reload'
 alias ef='e  "$BASEDIR"/bash/functions && reload'
 
 # Directory bookmarks
@@ -59,3 +59,4 @@ alias serve='python -m SimpleHTTPServer'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
+alias canary='open /Applications/Google\ Chrome\ Canary.app/ --args --disable-web-security'

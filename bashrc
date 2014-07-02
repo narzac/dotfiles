@@ -67,3 +67,5 @@ else
         PS1=$PS1_LOCAL_USER
     fi
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
