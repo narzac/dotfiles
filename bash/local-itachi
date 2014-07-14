@@ -2,8 +2,6 @@ export GRUNT_DEBUG=1
 export MRALLI_DEBUG=1
 
 export NVM_DIR="/Users/itachi/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# nvm auto complete support
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
