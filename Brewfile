@@ -48,7 +48,8 @@ install hashpump
 install imagemagick --with-webp
 install lynx
 install nmap
-install node # This installs `npm` too using the recommended installation method
+# install node # This installs `npm` too using the recommended installation method
+# use nvm to manage node
 install p7zip
 install pigz
 install pv
