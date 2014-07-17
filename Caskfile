@@ -26,3 +26,5 @@ cask install skype 2> /dev/null
 cask install firefox-nightly 2> /dev/null
 cask install firefox-aurora 2> /dev/null
 cask install vagrant 2> /dev/null
+
+cask install anki 2> /dev/null
