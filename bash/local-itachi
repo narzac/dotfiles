@@ -1,8 +1,9 @@
+#!/bin/bash
 export DOTFILES_DIR="$HOME/code/dotfiles"
 
 export GRUNT_DEBUG=1
 export MRALLI_DEBUG=1
 
-export NVM_DIR="/Users/itachi/.nvm"
+export NVM_DIR="/Users/$HOME/.nvm"
 # nvm auto complete support
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion

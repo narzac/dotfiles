@@ -1,3 +1,4 @@
+#!/bin/bash
 # Ensure user-installed binaries take precedence
 export PATH=$(pwd)/bin:/usr/local/bin:$PATH
 

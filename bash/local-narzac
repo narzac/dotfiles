@@ -1,21 +1,9 @@
 #!/bin/bash
-# export GOROOT="~/opt/go"
-# export GOPATH="~/code/go"
-# export QTDIR="~/Qt5.0.0/5.0.0/clang_64"
-# export PYTHONSTARTUP=~/.pystartup
-
-# export PATH="/usr/local/Cellar/gcc48/4.8.2/bin:${PATH}"
-# export PATH="$GOROOT/bin:/usr/local/sbin:/usr/local/bin:/usr/local/go/bin:/usr/local/bin:/usr/local/share/python:${PATH}"
-# export PATH="/usr/local/Cellar/smlnj/110.75/libexec/bin:${PATH}"
-# export PATH="${QTDIR}/bin:${PATH}"
-# export PATH="${PATH}:~/bin:~/code/go/bin:/usr/texbin:~/bin/depot_tools"
-# export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# #sqlite3 gotube fix
-# #export PKG_CONFIG_PATH="/usr/local/Cellar/sqlite/3.7.16.2/lib/pkgconfig"
-# # zlib gotube, macosx fix
-# export PKG_CONFIG_PATH="/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig"
+export DOTFILES_DIR="$HOME/code/dotfiles"
 
 export GRUNT_DEBUG=1
 export MRALLI_DEBUG=1
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export NVM_DIR="/Users/$HOME/.nvm"
+# nvm auto complete support
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
