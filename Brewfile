@@ -70,5 +70,6 @@ install python --with-brewed-openssl
 install python3 --with-brewed-openssl
 
 install ansible
+install unrar
 # Remove outdated versions from the cellar
 cleanup
