@@ -10,3 +10,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Add rvm, rpm, gem paths dynamicly as first place in the path
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+export PATH=$PATH:/usr/local/opt/go/libexec/bin

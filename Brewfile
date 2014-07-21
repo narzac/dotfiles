@@ -71,5 +71,12 @@ install python3 --with-brewed-openssl
 
 install ansible
 install unrar
+
+# Install  gotube dependencies
+install cmake
+install mariadb
+install sphinx --id64 --mysql
+install go
+
 # Remove outdated versions from the cellar
 cleanup
