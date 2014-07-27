@@ -77,9 +77,10 @@ install cmake
 install mariadb
 install sphinx --id64 --mysql
 install go
+install mercurial
 
 tap homebrew/binary
-install packer
+#install packer
 
 # Remove outdated versions from the cellar
 cleanup

@@ -28,3 +28,4 @@ cask install firefox-aurora 2> /dev/null
 cask install vagrant 2> /dev/null
 
 cask install anki 2> /dev/null
+cask install beyond-compare-4-beta 2> /dev/null
