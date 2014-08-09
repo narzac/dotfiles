@@ -9,4 +9,7 @@ export NVM_DIR="$HOME/.nvm"
 # nvm auto complete support
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
+# zlib gotube, macosx fix
+export PKG_CONFIG_PATH="/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig"
+
 export GOPATH="$HOME/code/go"

@@ -3,7 +3,7 @@
 export PATH="$HOME/code/dotfiles/bin:$HOME/bin:/usr/local/bin:$PATH"
 
 # Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin:$GOPATH/bin"
 
 # Add node, npm, nvm paths dynamicly
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
