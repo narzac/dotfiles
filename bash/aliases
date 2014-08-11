@@ -52,7 +52,7 @@ alias gst='git status -sb'
 alias gcm='git commit -m '
 
 
-alias jsa='jekyll --server --auto'
+alias jsa='jekyll serve build --config _config.yml,_config-devel.yml --draft --watch -t '
 alias clang11='clang++ -std=c++11  -I/usr/clang-ide/lib/c++/v1/ -stdlib=libc++ -Wall -pedantic '
 
 alias serve='python -m SimpleHTTPServer'
