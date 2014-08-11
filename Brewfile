@@ -82,5 +82,7 @@ install mercurial
 tap homebrew/binary
 #install packer
 
+install aspell
+
 # Remove outdated versions from the cellar
 cleanup
