@@ -13,13 +13,13 @@
 ;; INSTALL A FEW PACKAGES WITH PACKAGE MANAGER
 ;; list the packages you want
 (setq package-list '(smex css-mode rainbow-mode flymake-cursor
-                          buffer-move
-                          go-mode flymake-go  less-css-mode markdown-mode))
+						  buffer-move auctex
+						  go-mode flymake-go  less-css-mode markdown-mode))
 
 ;; list the repositories containing them
 (setq package-archives '(("elpa" . "http://tromey.com/elpa/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+						 ("gnu" . "http://elpa.gnu.org/packages/")
+						 ("marmalade" . "http://marmalade-repo.org/packages/")))
 
 ;; activate all the packages (in particular autoloads)
 (package-initialize)
@@ -31,7 +31,7 @@
 ;; install the missing packages
 (dolist (package package-list)
   (when (not (package-installed-p package))
-    (package-install package)))
+	(package-install package)))
 
 ;; CONFIGURE INSTALLED PACKAGES
 ;; use ido for minibuffer completion
@@ -70,8 +70,8 @@
 (yas/global-mode 1)
 (yas/load-directory "~/.emacs.d/config/mysnippets")
 (setq yas/prompt-functions '(yas/dropdown-prompt
-                             yas/completing-prompt
-                             yas/ido-prompt))
+							 yas/completing-prompt
+							 yas/ido-prompt))
 ;; ;;auto-complete
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-popup")
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete")
@@ -91,16 +91,16 @@
 
 ;; The modes that AC will start automatically.
 (setq ac-modes
-      '(emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode
-                        html-mode js-mode js2-mode
-                        c-mode cc-mode c++-mode java-mode
-                        perl-mode cperl-mode python-mode ruby-mode
-                        ecmascript-mode javascript-mode php-mode css-mode
-                        makefile-mode sh-mode fortran-mode f90-mode ada-mode
-                        xml-mode sgml-mode go-mode
-                        emms-tag-editor-mode
-                        asm-mode
-                        org-mode jade-mode stylus-mode sws-mode haskell-mode))
+	  '(emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode
+						html-mode js-mode js2-mode
+						c-mode cc-mode c++-mode java-mode
+						perl-mode cperl-mode python-mode ruby-mode
+						ecmascript-mode javascript-mode php-mode css-mode
+						makefile-mode sh-mode fortran-mode f90-mode ada-mode
+						xml-mode sgml-mode go-mode
+						emms-tag-editor-mode
+						asm-mode
+						org-mode jade-mode stylus-mode sws-mode haskell-mode))
 
 ;; The sources for common all mode.
 (custom-set-variables
@@ -110,10 +110,10 @@
  ;; If there is more than one, they won't work right.
  '(ac-sources
    (quote
-    (ac-source-abbrev ac-source-css-property ac-source-dictionary ac-source-features ac-source-filename ac-source-words-in-buffer)) t)
+	(ac-source-abbrev ac-source-css-property ac-source-dictionary ac-source-features ac-source-filename ac-source-words-in-buffer)) t)
  '(custom-safe-themes
    (quote
-    ("dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default))))
+	("dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" default))))
 
 ;; auto-complete hooks for emacs-lisp
 (add-hook 'emacs-lisp-mode (lambda () (add-to-list 'ac-sources '(ac-source-functions ac-source-symbols ac-source-variables ))))
@@ -136,9 +136,12 @@
 (setq js2-bounce-indent-p t)
 ;; Special improvements using the mooz fork
 ;; https://github.com/mooz/js2-mode
-(setq js2-pretty-multiline-declarations t )
-(setq js2-consistent-level-indent-inner-bracket-p t)
-(setq js2-use-ast-for-indentation-p t)
+;;(setq js2-pretty-multiline-declarations t )
+;;(setq js2-consistent-level-indent-inner-bracket-p t)
+;;(setq js2-use-ast-for-indentation-p t)
+(eval-after-load 'js2-mode
+  '(define-key js2-mode-map (kbd "RET") 'js2-line-break))
+
 
 (require 'flymake)
 (custom-set-faces
@@ -157,7 +160,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/jshint-mode")
 (require 'flymake-jshint)
 (add-hook 'javascript-mode-hook
-          (lambda () (flymake-mode t)))
+		  (lambda () (flymake-mode t)))
 
 ;; ;; Turns on flymake for all files which have a flymake mode
 ;; (add-hook 'find-file-hook 'flymake-find-file-hook)
@@ -215,7 +218,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/yaml-mode/")
 (require 'yaml-mode )
 
-
 ;; (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 ;; (require 'tex-site)
 
@@ -240,8 +242,8 @@
 ;; (setq preview-image-type 'png)
 
 ;; editorconfig support
-;; (add-to-list 'load-path "~/.emacs.d/vendor/editorconfig-emacs/")
-;; (load "editorconfig")
+(add-to-list 'load-path "~/.emacs.d/vendor/editorconfig-emacs/")
+(load "editorconfig")
 
 ;; scss mode
 ;; show emacs where to find sass executable
@@ -275,3 +277,5 @@
 ;; (setq web-mode-style-padding 1)
 ;; (setq web-mode-script-padding 1)
 ;; (setq web-mode-block-padding 0)
+
+(setq-default ispell-program-name "aspell")
