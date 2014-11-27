@@ -29,3 +29,5 @@ cask install vagrant 2> /dev/null
 
 cask install anki 2> /dev/null
 cask install beyond-compare-4-beta 2> /dev/null
+cask install calibre 2> /dev/null
+cask install mactex 2> /dev/null

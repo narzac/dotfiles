@@ -84,5 +84,17 @@ tap homebrew/binary
 
 install aspell
 
+# preview-latex dependency
+install ghostscript
+
+install pandoc
+
+install gibo
+
+install lxsplit
+
+tap Tox/tox
+install --HEAD libtoxcore
+
 # Remove outdated versions from the cellar
 cleanup
