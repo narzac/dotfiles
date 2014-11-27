@@ -1,6 +1,6 @@
 [user]
     name = Ahmet Yeşil
-    email = narzac@gmail.com
+    email = ayesil@freeconsole.org
 
 [color]
     ui = true
@@ -9,6 +9,9 @@
 [core]
     editor = /usr/bin/vim
     pager = less -FRSX
+    autocrlf = input
+    safecrlf = true
+    excludesfile = /Users/narzac/.gitignore
 
 [apply]
     whitespace = nowarn
