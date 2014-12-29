@@ -18,3 +18,4 @@ eshell/
 tmp/
 url/
 Gemfile.lock
+bash/local-git-ignore
