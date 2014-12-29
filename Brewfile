@@ -46,7 +46,7 @@ install foremost
 install git
 install hashpump
 install imagemagick --with-webp
-install lynx
+#install lynx
 install nmap
 # install node # This installs `npm` too using the recommended installation method
 # use nvm to manage node
@@ -76,11 +76,12 @@ install unrar
 install cmake
 install mariadb
 install sphinx --id64 --mysql
-install go
+# Install go from the source
+#install go
 install mercurial
 
 tap homebrew/binary
-#install packer
+install packer
 
 install aspell
 
@@ -93,8 +94,8 @@ install gibo
 
 install lxsplit
 
-tap Tox/tox
-install --HEAD libtoxcore
+#tap Tox/tox
+#install --HEAD libtoxcore
 
 # Remove outdated versions from the cellar
 cleanup
